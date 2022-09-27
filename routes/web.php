@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EncuestaController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/encuesta', [EncuestaController::class, 'index'])->name('encuesta');
 Route::post('/encuesta/post-evalucacion', [EncuestaController::class, 'post_evauacion'])->name('post-evaluacion');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/post-login', [LoginController::class, 'post_login'])->name('post-login');
