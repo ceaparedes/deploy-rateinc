@@ -37,7 +37,7 @@
                     <h1 style="color:#FFF">Encuesta Rateinc</h1>
                 </div>
                 @if ($errors->any())
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger" style="color:red">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>

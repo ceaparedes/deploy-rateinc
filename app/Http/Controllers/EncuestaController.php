@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Encuesta;
 
 class EncuestaController extends Controller
 {
@@ -14,9 +15,13 @@ class EncuestaController extends Controller
 
         $validated = $request->validate([
             'nota' => 'required|numeric|min:1|max:10',
-            'comentario' => 'required'
         ]);
 
+        Encuesta::create([
+            'nota' => $request->nota,
+            'comentario' => $request->comentario,
+        ]);
+        return redirect('/')->with('success', 'Encuesta Guardada con éxito, gracias por participar');
        
     }
 }
