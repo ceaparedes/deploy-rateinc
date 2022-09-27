@@ -36,9 +36,18 @@
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <h1 style="color:#FFF">Encuesta Rateinc</h1>
                 </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
-               <form action="">
-
+               <form action="{{route('post-evaluacion')}}" method="post">
+                @csrf
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                         <div class="flex items-center">
