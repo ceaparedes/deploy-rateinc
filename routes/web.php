@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EncuestaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\GraficosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,5 @@ Route::post('/encuesta/post-evalucacion', [EncuestaController::class, 'post_evau
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/post-login', [LoginController::class, 'post_login'])->name('post-login');
+
+Route::get('/graficos', [GraficosController::class, 'index'])->name('graficos');
