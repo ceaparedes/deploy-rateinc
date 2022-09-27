@@ -49,28 +49,46 @@
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                         <div class="flex items-center">
-                            <div >
+                            <div style="margin-right:10px;">
                                 <label for="nota_1">1</label>
                                 <input type="radio" name="nota" id="nota_1" onclick="show_comentario(1)" value="1">
                             </div>
-                            <label for="nota_2">2</label>
-                            <input type="radio" name="nota" id="nota_2" onclick="show_comentario(2)" value="2">
-                            <label for="nota_3">3</label>
-                            <input type="radio" name="nota" id="nota_3" onclick="show_comentario(3)" value="3">
-                            <label for="nota_4">4</label>
-                            <input type="radio" name="nota" id="nota_4" onclick="show_comentario(4)" value="4">
-                            <label for="nota_5">5</label>
-                            <input type="radio" name="nota" id="nota_5" onclick="show_comentario(5)" value="5">
-                            <label for="nota_6">6</label>
-                            <input type="radio" name="nota" id="nota_6" onclick="show_comentario(6)" value="6">
-                            <label for="nota_7">7</label>
-                            <input type="radio" name="nota" id="nota_7" onclick="show_comentario(7)"  value="7">
-                            <label for="nota_8">8</label>
-                            <input type="radio" name="nota" id="nota_8" onclick="show_comentario(8)"  value="8">
-                            <label for="nota_9">9</label>
-                            <input type="radio" name="nota" id="nota_9" onclick="show_comentario(9)"  value="9">
-                            <label for="nota_10">10</label>
-                            <input type="radio" name="nota" id="nota_10" onclick="show_comentario(10)"  value="10">
+                            <div style="margin-right:10px;">
+                                <label for="nota_2">2</label>
+                                <input type="radio" name="nota" id="nota_2" onclick="show_comentario(2)" value="2">
+                            </div>
+                            <div style="margin-right:10px;">
+                                <label for="nota_3">3</label>
+                                <input type="radio" name="nota" id="nota_3" onclick="show_comentario(3)" value="3">
+                            </div>
+                            <div  style="margin-right:10px;">
+                                <label for="nota_4">4</label>
+                                <input type="radio" name="nota" id="nota_4" onclick="show_comentario(4)" value="4">
+                            </div>
+                            <div  style="margin-right:10px;">
+                                <label for="nota_5">5</label>
+                                <input type="radio" name="nota" id="nota_5" onclick="show_comentario(5)" value="5">
+                            </div>
+                            <div  style="margin-right:10px;">
+                                <label for="nota_6">6</label>
+                                <input type="radio" name="nota" id="nota_6" onclick="show_comentario(6)" value="6">
+                            </div>
+                            <div  style="margin-right:10px;">
+                                <label for="nota_7">7</label>
+                                <input type="radio" name="nota" id="nota_7" onclick="show_comentario(7)"  value="7">
+                            </div>
+                            <div  style="margin-right:10px;">
+                                <label for="nota_8">8</label>
+                                <input type="radio" name="nota" id="nota_8" onclick="show_comentario(8)"  value="8">
+                            </div>
+                            <div  style="margin-right:10px;">
+                                <label for="nota_9">9</label>
+                                <input type="radio" name="nota" id="nota_9" onclick="show_comentario(9)"  value="9">
+                            </div>
+                            <div  style="margin-right:10px;">
+                                <label for="nota_10">10</label>
+                                <input type="radio" name="nota" id="nota_10" onclick="show_comentario(10)"  value="10">
+                            </div>
                         </div>  
                     </div>
                 </div>
@@ -78,7 +96,7 @@
                     <div class="flex justify-center mt-4 sm:items-center sm:justify-between"  >
                         <div class="text-center text-sm text-gray-500 sm:text-center">
                             <div class="flex items-center">
-                            <label for="comentario" id="label-comentario">“¿Por qué NO recomendaría el proceso de selección?”</label>
+                            <label for="comentario" id="label-comentario"></label>
                             </div>  
                         </div>
                     </div>
@@ -93,7 +111,7 @@
                     <div class="flex justify-center mt-4 sm:items-center sm:justify-between" >
                         <div class="text-center text-sm text-gray-500 sm:text-center">
                             <div class="flex items-center">
-                                <button>Evaluar</button>
+                                <button type="submit">Evaluar</button>
                             </div>  
                         </div>
                     </div>
@@ -103,7 +121,18 @@
         </div> 
     <script>
         function show_comentario(nota){
-            alert(nota);
+            let text_comentario = ``;
+            if(parseInt(nota) <= 6){
+                text_comentario = `¿Por qué NO recomendaría el proceso de selección?`;
+            }else if(parseInt(nota) >= 7 && parseInt(nota) <= 8){
+                text_comentario = `¿Qué podemos mejorar en el proceso de selección para que si lo recomiendes?`;
+            }else if(parseInt(nota) >= 9){
+                text_comentario = `Gracias por tu evaluación, nos puedes dejar tus comentarios o sugerencias a continuación`;
+            }
+
+            document.getElementById('label-comentario').innerHTML = text_comentario
+            document.getElementById("div-comentario").style.display = "block";
+
         }
     </script>
 
