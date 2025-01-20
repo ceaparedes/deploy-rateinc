@@ -8,6 +8,7 @@ use App\Models\Encuesta;
 class EncuestaController extends Controller
 {
     public function index(){
+        //comentario de prueba deploy.
         return view('encuesta');
     }
 
