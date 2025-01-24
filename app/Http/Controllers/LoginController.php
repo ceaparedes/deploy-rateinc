@@ -12,7 +12,7 @@ class LoginController extends Controller
     }
 
     public function post_login(Request $request){
-        // dd($request->all());
+        // esta es una prueba de edicion desde Visual studio
         try { 
             $validated = $request->validate([
                 'email' => 'required|email',
